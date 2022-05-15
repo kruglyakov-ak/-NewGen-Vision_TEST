@@ -17,9 +17,9 @@
 
 //     // Список курсов
 //     let courses = [
-//         { name: "Courses in England", prices: [0, 100] }, 
-//         { name: "Courses in Germany", prices: [500, null] }, 
-//         { name: "Courses in Italy", prices: [100, 200] }, 
+//         { name: "Courses in England", prices: [0, 100] },
+//         { name: "Courses in Germany", prices: [500, null] },
+//         { name: "Courses in Italy", prices: [100, 200] },
 //         { name: "Courses in Russia", prices: [null, 400] },
 //         { name: "Courses in China", prices: [50, 250] },
 //         { name: "Courses in USA", prices: [200, null] },
@@ -37,7 +37,6 @@
 //    // [подходящие курсы для каждого варианта фильтра]
 
 // Дополнительно, вы также можете реализовать алгоритм сортировки курсов по цене.
-
 
 type Course = {
   name: string;
@@ -70,7 +69,7 @@ const filterAndSortCoursesList = (
   const from = priceFrom !== null ? priceFrom : 0;
   const to = priceTo !== null ? priceTo : Infinity;
 
-  const filteredCoursesList = coursesList. slice().filter((course) => {
+  const filteredCoursesList = coursesList.slice().filter((course) => {
     return (
       (course.prices[0] !== null
         ? from <= course.prices[0]
@@ -100,4 +99,3 @@ const filterAndSortCoursesList = (
       );
   }
 };
-
