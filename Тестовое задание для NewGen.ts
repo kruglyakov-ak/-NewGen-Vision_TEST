@@ -66,16 +66,16 @@ const filterAndSortCoursesList = (
   priceTo: number | null = null,
   sortType: SortType = SortType.Default
 ): Course[] => {
-  const from = priceFrom !== null ? priceFrom : 0;
-  const to = priceTo !== null ? priceTo : Infinity;
+  const min = priceFrom !== null ? priceFrom : 0;
+  const max = priceTo !== null ? priceTo : Infinity;
 
   const filteredCoursesList = coursesList.slice().filter((course) => {
     return (
       (course.prices[0] !== null
-        ? from <= course.prices[0]
+        ? min <= course.prices[0]
         : priceFrom === course.prices[0]) &&
       (course.prices[1] !== null
-        ? to >= course.prices[1]
+        ? max >= course.prices[1]
         : priceTo === course.prices[1])
     );
   });
